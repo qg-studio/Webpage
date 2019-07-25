@@ -1,0 +1,76 @@
+*{
+	margin: 0;
+	padding: 0;
+	background-color: #e9f9f9;
+	overflow: hidden;
+}
+body {
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+.container {
+	position: absolute;
+	left: 66%;
+	top: 25%;
+	width: 25%;
+	height: 52%;
+}
+img {
+	display: block;
+	width: 100%;
+}
+h3 {
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 30%;
+	font-size: 30PX;
+	line-height: 32PX;
+	text-align: center;
+	letter-spacing: 2px;
+	overflow: hidden;
+}
+input {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 15%;
+	outline: none;
+	border: none;
+	font-size: 25px;
+	font-family: STFangsong;
+	text-indent: 18px;
+	background-color: #fff;
+}
+span {
+	display: block;
+	position: absolute;
+	right: 5%;
+	width: 50%;
+	height: 10%;
+	color: #f40;
+	font-weight: bold;
+	font-size: 15px;
+	text-align: right; 
+}
+button{
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 7%;
+	width: 86%;
+	height: 15%;
+	background-color: #5b08c3;
+	border: none;
+	outline: none;
+	border-radius: 10PX;
+	font-size: 25PX;
+	color: #fff;
+	letter-spacing: 5px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+
