@@ -1,0 +1,154 @@
+.container {
+    position: relative;
+    top: 20px;
+    left: 270px;
+    padding: 2% 3%;
+    margin-bottom: 2%;
+    width: 72%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #fff;
+}
+.nav li:first-child,
+.nav li:first-child input{
+  background-color: #5b08c3;
+}
+
+.headline {
+    display: block;
+    margin-bottom: 4%;
+    font-weight: 800;
+    font-size: 300%;
+    font-family: Georgia;
+    line-height: 150%;
+}
+.content h1 {
+    border-bottom: 2px solid #323232;
+}
+
+.ulAll {
+    position: relative;
+    margin: 2% 0;  
+}
+.ulAll ul {
+    display: table;
+    position: relative;
+    border-radius: 15px;
+    width: 100%;
+    height: 150px;
+    background-color: #fafafa;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.10);
+}
+.ulAll ul li {
+    display: table-cell;
+    /* width: 33%; */
+    width: 25%;
+    height: 100%;
+    text-align: center;
+}
+
+.pic {
+    display: inline-block; 
+    position: relative; 
+    overflow: hidden;
+    border: 1px solid #000;
+    margin: 25px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background-color: #fff;
+}
+.pic img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+}
+.pic input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+}
+.text {
+    position: relative;
+    padding: 20px 0 0 0;
+}
+/* .text textarea {
+    position: absolute;
+    left: 0;
+    padding: 1.5%;
+    width: 100%;
+    height: 70%;
+    overflow: auto;
+    border: 1px solid transparent;
+    background: none;
+} */
+.text input {
+    overflow: auto;
+    position: absolute;
+    left: 0;
+    top: 35%;
+    border: 1px solid transparent;
+    width: 80%;
+    height: 20%;
+    outline: none;
+    background: none;
+}
+.text textarea {
+    overflow: auto;
+    position: absolute;
+    padding: 1%;
+    left: 0;
+    border: 1px solid transparent;
+    width: 100%;
+    height: 70%;
+    outline: none;
+    background: none;
+}
+
+.edit {
+    position: absolute;
+    top: 58px;    
+    width: 42px;
+    cursor: pointer;
+}
+.sure {
+    display: none;
+    position: absolute;
+    top: 58px;    
+    width: 42px;
+    cursor: pointer;
+}
+.border {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid #dfdede;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+}
+
+.delete {
+    width: 100%;
+    cursor: pointer;
+}
+.increase {
+    display: block;
+    margin: 0 auto;
+    width: 8%;
+    cursor: pointer;
+}
+
+.addUl {
+    margin: 0 auto;
+    padding: 1%;
+}
+.upLoad {
+    opacity: 0;
+}

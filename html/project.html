@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/project.css">
   <title>QG官网后台管理系统</title>
+  <script src="../js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
   <div class="sidebar">
@@ -12,16 +14,23 @@
       <h2>QG官网后台管理系统</h2>
     </div>
     <ul class="nav">
-      <li id="about-qg"><img src="../image/qglogo.png"><input type="button" class="select" value="关于QG"></li>
-      <li id="we"><img src="../image/qglogo.png"><input type="button" class="select" value="我们"></li>
-      <li id="member"><img src="../image/qglogo.png"><input type="button" class="select" value="成员"></li>
-      <li id="project"><img src="../image/qglogo.png"><input type="button" class="select" value="项目"></li>
-      <li id="honor"><img src="../image/qglogo.png"><input type="button" class="select" value="荣誉"></li>
-      <li id="column"><img src="../image/qglogo.png"><input type="button" class="select" value="专栏"></li>
+      <li id="about-qg"><a href="../html/about-qg.html"><img src="../image/关于QG.png"><input id="about-qg" type="button" class="select" value="关于QG"></a></li>
+      <li id="we"><a href="../html/we.html"><img src="../image/我们.png"><input id="we-input" type="button" class="select" value="我们"></a></li>
+      <li id="member"><a href="../html/member.html"><img src="../image/成员.png"><input id="member-input" type="button" class="select" value="成员"></a></li>
+      <li id="project"><a href="../html/project.html"><img src="../image/项目.png"><input id="project-input" type="button" class="select" value="项目"></a></li>
+      <li id="honor"><a href="../html/honor.html"><img src="../image/荣誉.png"><input id="honor-input" type="button" class="select" value="荣誉"></a></li>
+      <li id="column"><a href="../html/column.html"><img src="../image/专栏.png"><input id="column-input" type="button" class="select" value="专栏"></a></li>
     </ul>
   </div>
   <div class="container">
+    <div class="content">
+      <h1>项目</h1>
+
+    </div>
+    <div class="addUl">
+      <img class="increase" src="../image/+.png" alt="增加">
+    </div>
   </div>
-  <script src=""></script>
+  <script src="../js/project.js"></script>
 </body>
 </html>
