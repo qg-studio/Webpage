@@ -63,9 +63,9 @@ function awardNode(j) {
                  <textarea style="width: 8rem" disabled="disabled">${awardData[j].institution || ""}</textarea>
                  <textarea style="width: 6rem" disabled="disabled">${awardData[j].winner || ""}</textarea>
                  <textarea style="width: 4rem" disabled="disabled">${awardData[j].leader || ""}</textarea>
-                 <img src="image/修改.png" style="right: 2rem" onclick="editable()">
-                 <img src="image/确定.png" style="display: none; right:2rem" onclick="awardModify(getAward)">
-                 <img src="image/删除.png" style="right: 0rem" onclick="awardDelete()">
+                 <img src="image/修改.png" style="right: 4rem" onclick="editable()">
+                 <img src="image/确定.png" style="display: none; right:4rem" onclick="awardModify(getAward)">
+                 <img src="image/删除.png" style="right: 2rem" onclick="awardDelete()">
                </div>`
   return model;
 }
@@ -228,11 +228,27 @@ function awardAddCommit() {
   }
   getAward();
 }
+// 导入
+function awardImport(){
+  var file = event.target.files[0];
+  var formdata = new FormData();
+  formdata.append("file", file);
 
-//——————————————————————————————————————————————————————————————————————————————————————————————————————————————//
-//——————————————————————————————————————————————————————————————————————————————————————————————————————————————//
-//——————————————————————————————————————————————————————————————————————————————————————————————————————————————//
-
+ $.ajax({
+    url: serverUrl + "/award/import",
+    method: "POST",
+    data: formdata,
+    contentType: false,
+    processData: false,
+    dataType: "json",
+    async: false,
+    success: function (data) {
+      console.log(data);
+      alert("导入成功");
+      location.reload();
+    }
+  })
+}
 //新闻
 // 请求数据
 function getNews() {
@@ -279,9 +295,9 @@ function newsNode(j) {
                 <textarea style="width: 3rem" disabled="disabled">${(newsPage - 1) * PageSize + j + 1}</textarea>
                 <textarea style="width: 20rem" disabled="disabled">${newsData[j].title || ""}</textarea>
                 <textarea style="width: 24rem" disabled="disabled">${newsData[j].url || ""}</textarea>
-                <img src="image/修改.png" style="right: 2rem" onclick="editable()">
-                <img src="image/确定.png" style="display: none; right:2rem" onclick="newsModify(getNews)">
-                <img src="image/删除.png" style="right: 0rem" onclick="newsDelete()">
+                <img src="image/修改.png" style="right: 4rem" onclick="editable()">
+                <img src="image/确定.png" style="display: none; right:4rem" onclick="newsModify(getNews)">
+                <img src="image/删除.png" style="right: 2rem" onclick="newsDelete()">
               </div> `
   return model;
 }
@@ -432,7 +448,26 @@ function newsAddCommit() {
   }
   getNews();
 }
+// 导入
+function newsImport(){
+  var file = event.target.files[0];
+  var formdata = new FormData();
+  formdata.append("file", file);
 
+ $.ajax({
+    url: serverUrl + "/news/import",
+    method: "POST",
+    data: formdata,
+    contentType: false,
+    processData: false,
+    dataType: "json",
+    async: false,
+    success: function (data) {
+      alert("导入成功");
+      location.reload();
+    }
+  })
+}
 
 
 
@@ -485,9 +520,9 @@ function patentNode(j) {
                 <textarea style="width: 11rem" disabled="disabled">${patentData[j].name || ""}</textarea>
                 <textarea style="width: 10rem" disabled="disabled">${patentData[j].zl || ""}</textarea>
                 <textarea style="width: 13rem" disabled="disabled">${patentData[j].inventor || ""}</textarea>
-                <img src="image/修改.png" style="right: 2rem" onclick="editable()">
-                <img src="image/确定.png" style="display: none; right:2rem" onclick="patentModify(getPatent)">
-                <img src="image/删除.png" style="right: 0rem" onclick="patentDelete()">
+                <img src="image/修改.png" style="right: 4rem" onclick="editable()">
+                <img src="image/确定.png" style="display: none; right:4rem" onclick="patentModify(getPatent)">
+                <img src="image/删除.png" style="right: 2rem" onclick="patentDelete()">
               </div>`
   return model;
 }
@@ -644,6 +679,26 @@ function patentAddCommit() {
   }
   getPatent();
 }
+// 导入
+function patentImport(){
+  var file = event.target.files[0];
+  var formdata = new FormData();
+  formdata.append("file", file);
+
+ $.ajax({
+    url: serverUrl + "/patent/import",
+    method: "POST",
+    data: formdata,
+    contentType: false,
+    processData: false,
+    dataType: "json",
+    async: false,
+    success: function (data) {
+      alert("导入成功");
+      location.reload();
+    }
+  })
+}
 
 
 
@@ -696,9 +751,9 @@ function copyrightNode(j) {
                 <textarea style="width: 16rem" disabled="disabled">${copyrightData[j].name || ""}</textarea>
                 <textarea style="width: 10rem" disabled="disabled">${copyrightData[j].rn || ""}</textarea>
                 <textarea style="width: 16rem" disabled="disabled">${copyrightData[j].date || ""}</textarea>
-                <img src="image/修改.png" style="right: 2rem" onclick="editable()">
-                <img src="image/确定.png" style="display: none; right:2rem" onclick="copyrightModify(getCopyright)">
-                <img src="image/删除.png" style="right: 0rem" onclick="copyrightDelete()">
+                <img src="image/修改.png" style="right: 4rem" onclick="editable()">
+                <img src="image/确定.png" style="display: none; right:4rem" onclick="copyrightModify(getCopyright)">
+                <img src="image/删除.png" style="right: 2rem" onclick="copyrightDelete()">
               </div>`
   return model;
 }
@@ -853,7 +908,26 @@ function copyrightAddCommit() {
   }
   getCopyright();
 }
+// 导入
+function copyrightImport(){
+  var file = event.target.files[0];
+  var formdata = new FormData();
+  formdata.append("file", file);
 
+ $.ajax({
+    url: serverUrl + "/copyright/import",
+    method: "POST",
+    data: formdata,
+    contentType: false,
+    processData: false,
+    dataType: "json",
+    async: false,
+    success: function (data) {
+      alert("导入成功");
+      location.reload();
+    }
+  })
+}
 
 
 

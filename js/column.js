@@ -109,7 +109,7 @@ function picAdd(j, i, picId) {
     let picStr = `<div class="picDiv">
                     <div class="pic">
                         <form name="form1" id="form1" enctype="multipart/form-data">
-                            <input type="file" multiple="multiple" id="picture" name="coverUrl" class="upLoad" accept="image/gif, image/jpeg, image/png" disabled="disabled">
+                            <input type="file" multiple="multiple" id="picture" name="coverUrl" class="upLoad" accept="image/gif, image/jpeg, image/png" disabled="disabled" onchange="showPic()">
                         </form>
                         <img class="image-small" src="" alt="" title="${picId}">
                         <div class="border">
@@ -217,19 +217,6 @@ function editText() {
                 }
             }
         }(i);
-
-        for (let j = 0; j < inputPic.length; j++) {
-            deletePic[j].onclick = function (i, num) {
-                return function () {
-                    if (confirm("你真的要把我删除嘛？(；´д｀)ゞ")) {
-                        picDiv[num].parentNode.removeChild(picDiv[num]);
-                        deletePicAjax(i, num);
-                    } else {
-                        return false;
-                    }
-                }
-            }(0, j);
-        }
         deleteUl[i].onclick = function (num) {
             return function () {
                 if (confirm("你真的要把我删除嘛？(；´д｀)ゞ")) {
@@ -241,54 +228,84 @@ function editText() {
             }
         }(i);
         for (let j = 0; j < inputPic.length; j++) {
-            (function (i, j) {
-                revise[j].onclick = function () {
-                    console.log(i, j)
-                    inputPic[j].removeAttribute("disabled");
-                    inputPic[j].style.borderBottom = "1px solid black";
-                    revise[j].style.display = "none";
-                    picSure[j].style.display = "inline";
-                    upInput[j].removeAttribute("disabled");
-                    upInput[j].style.cursor = "pointer";
-                    showPic(i, j);
+            deletePic[j].onclick = function (i, num) {
+                return function () {
+                    if (confirm("你真的要把我删除嘛？(；´д｀)ゞ")) {
+                        picDiv[num].parentNode.removeChild(picDiv[num]);
+                        deletePicAjax();
+                    } else {
+                        return false;
+                    }
                 }
-            })(i, j);
+            }(0, j);
         }
         for (let j = 0; j < inputPic.length; j++) {
-            (function (i, j) {
-                picSure[j].onclick = function () {
-                    inputPic[num].setAttribute("disabled", "disabled");
-                    inputPic[num].style.border = "1px solid transparent";
-                    picSure[num].style.display = "none";
-                    revise[num].style.display = "inline";
-                    upInput[num].setAttribute("disabled", "disabled");
-                    upInput[num].style.cursor = "auto";
-                    changePicDesAjax(i, num);
-                    changePicAjax(i, num);
-                }
-            })(i, j);
+            revise[j].onclick = function () {
+                inputPic[j].removeAttribute("disabled");
+                inputPic[j].style.borderBottom = "1px solid black";
+                revise[j].style.display = "none";
+                picSure[j].style.display = "inline";
+                upInput[j].removeAttribute("disabled");
+                upInput[j].style.cursor = "pointer";
+            }
+        }
+        for (let j = 0; j < inputPic.length; j++) {
+            picSure[j].onclick = function () {
+                This = event.target;
+                inputPic[j].setAttribute("disabled", "disabled");
+                inputPic[j].style.border = "1px solid transparent";
+                picSure[j].style.display = "none";
+                revise[j].style.display = "inline";
+                upInput[j].setAttribute("disabled", "disabled");
+                upInput[j].style.cursor = "auto";
+                if(This.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.title != 'h') {
+                    changePicDesAjax();
+                    changePicAjax();
+                } 
+                upLoadpicAjax();
+            }
         }
     }
 }
 editText();
 
+/*显示图片*/
+function showPic() {
+    var This = event.target;
+    var img = This.parentNode.parentNode.getElementsByClassName("image-small")[0];
+    var reader = new FileReader();
+    window.file = This.files[0];
+
+    if (file.size > 5 * 1024 * 1024) {
+        alert("图片文件过大");
+        return;
+    }
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+        img.src = this.result;
+    }
+}
+
 /*增加图片*/
 for (var i = 0; i < textarea.length; i++) {
     increasePic[i].onclick = function (num) {
         return function () {
-            picAdd(-1, num);
+            picAdd(-1, num, 'h');
             editText();
             for (var j = 0; j < inputPic.length; j++) {
                 console.log(num, j);
-                showPic(num, j);
+                showPic();
             }
         }
     }(i)
 }
+
 /*删除图片*/
-function deletePicAjax(num, j) {
+function deletePicAjax() {
+    var This = event.target;
+    console.log(This.parentNode.parentNode.parentNode)
     var data = {
-        "imageId": divData[num].images[j].id
+        "imageId": This.parentNode.parentNode.parentNode.getElementsByClassName("image-small")[0].title
     }
 
     $.ajax({
@@ -301,12 +318,14 @@ function deletePicAjax(num, j) {
         "crossDomain": true
     })
         .done(function (response) {
+            response = JSON.parse(response);
             alert(response.message);
         })
         .fail(function (jqXHR) {
             alert(jqXHR.message);
         })
 }
+
 /*删除板块ajax*/
 function deleteDiv(number) {
     var data = {
@@ -325,6 +344,7 @@ function deleteDiv(number) {
         "crossDomain": true
     })
         .done(function (response) {
+            response = JSON.parse(response);
             alert(response.message);
         })
         .fail(function (jqXHR) {
@@ -356,6 +376,7 @@ increase[0].onclick = function () {
     }
     increaseAdd(len - 1);
 }
+
 /*增加板块ajax*/
 function increaseDiv() {
     var newTitle = inputTitle[textarea.length - 1].value;
@@ -389,6 +410,35 @@ function increaseDiv() {
     })
 }
 
+/*上传图片*/
+function upLoadpicAjax() {
+    var formData = new FormData();
+    var This = event.target;
+    var img = This.parentNode.parentNode.getElementsByClassName("image-small")[0];
+    
+    formData.append('uploads', file);
+    formData.append('featureId', This.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.title);
+    formData.append('description', This.parentNode.parentNode.parentNode.getElementsByClassName("picInput")[0].value);
+
+    $.ajax({
+        url: "http://www.cxkball.club:2333/feature/upload",
+        type: "POST",
+        dataType: "json",
+        data: formData,
+        async: false,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            console.log(data)
+            img.title = data.data.images[data.data.images.length-1].id;
+            alert(data.message);
+        },
+        error: function () {
+            alert(data.message);
+        }
+    });
+}
+
 /*更改标题和描述ajax*/
 function changeAjax(id, description, title) {
     var data = {
@@ -409,6 +459,7 @@ function changeAjax(id, description, title) {
         "crossDomain": true
     })
         .done(function (response) {
+            response = JSON.parse(response);
             alert(response.message);
         })
         .fail(function (jqXHR) {
@@ -417,14 +468,13 @@ function changeAjax(id, description, title) {
 }
 
 /*修改单张图片*/
-function changePicAjax(num, j) {
+function changePicAjax() {
     var formData = new FormData();
-    if (filedata) {
-        formData.append('uploads', filedata);
-        formData.append('imageId', ulDiv[num].getElementsByClassName("image-small")[j].title);
-    } else {
-        return false;
-    }
+    var This = event.target;
+    var img = This.parentNode.parentNode.getElementsByClassName("image-small")[0];
+
+    formData.append('uploads', file);
+    formData.append('imageId', img.title);
     console.log(formData);
 
     $.ajax({
@@ -446,10 +496,11 @@ function changePicAjax(num, j) {
 }
 
 /*修改单张图片描述*/
-function changePicDesAjax(i, j) {
+function changePicDesAjax() {
+    var This = event.target;
     var data = {
-        id: ulDiv[i].getElementsByClassName("image-small")[j].title,
-        description: inputPic[j].value
+        id: This.parentNode.parentNode.getElementsByClassName("image-small")[0].title,
+        description: This.parentNode.parentNode.parentNode.getElementsByClassName("picInput")[0].value
     }
     data = JSON.stringify(data);
 
@@ -467,28 +518,6 @@ function changePicDesAjax(i, j) {
             alert(data.message);
         }
     });
-}
-
-/*显示图片*/
-function showPic(i, j) {
-    console.log(i, j);
-    upInput[j].onchange = function () {
-        var reader = new FileReader();
-        console.log(i, j);
-        //将文件以Data URL形式读入页面 
-        var picture = ulDiv[i].getElementsByClassName("upLoad");
-        console.log(picture.length);
-        /*把图片地址存起来*/
-        if (picture[j].files[0]) {
-            reader.readAsDataURL(picture[j].files[0]);
-            console.log(picture[j]);
-            window.filedata = picture[j].files[0] ? picture[j].files[0] : 0;
-            reader.onload = function () {
-                console.log(reader.result);
-                ulDiv[i].getElementsByClassName("image-small")[j].src = this.result;
-            }
-        }
-    };
 }
 
 /*序号*/

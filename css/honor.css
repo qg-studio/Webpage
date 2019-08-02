@@ -36,7 +36,7 @@ h1:hover:after {
 .news, 
 .patent, 
 .copyright {
-	width: 58rem;
+	width: 60rem;
 	margin: 10px auto;
 }
 .rule {
@@ -51,12 +51,21 @@ h1:hover:after {
 	text-align: center;
 	font-size: 1.6rem;
 }
-.subtitle img {
+.subtitle img,
+.subtitle input,
+.subtitle a{
 	display: block;
 	position: absolute;
-	height: 80%;
-	top: 12%;
+	height: 1.6rem;
+	width: 1.6rem;
+	top: 0.2rem;
 	cursor: pointer;
+} 
+.subtitle input{
+	opacity: 0;
+	width: 0;
+	height: 0;
+	padding: 0.9rem;
 }
 .header {
 	margin: 1rem 0;
@@ -73,8 +82,9 @@ h1:hover:after {
 }
 .list {
 	position: relative;
-	box-shadow: 1px 2px 5px #d2d2d2;
-	margin: 0.5rem 0;
+	margin: 0.6rem auto;
+	box-shadow: 0 0px 5px #d2d2d2;
+	border-radius: 5px;
 }
 .award-list {
 	height: 6rem;
@@ -128,7 +138,6 @@ h1:hover:after {
 }
 .page {
 	margin: 0 auto;
-	height: 2rem;
 	text-align: center;
 }
 .page li {
