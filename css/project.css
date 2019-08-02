@@ -14,8 +14,26 @@
 background-color: #5b08c3;
 }
 
-.content h1 {
-    border-bottom: 2px solid #323232;
+h1 {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+h1:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+
+    position: absolute;
+    background: black;
+    transition: width .3s ease 0s;
+    width: 0
+}
+h1:hover:after {
+    width: 97%;
 }
 
 .ulAll {

@@ -1,0 +1,156 @@
+#member,
+#member input {
+	background-color: #5b08c3;
+}
+h1 {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+h1:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+
+    position: absolute;
+    background: black;
+    transition: width .3s ease 0s;
+    width: 0
+}
+h1:hover:after {
+    width: 97%;
+}
+.container .memberTitle{
+	margin: 40px 0;
+	width: 100%;
+	height: 40px;
+	font-size: 32px;
+}
+.year,
+.group {
+	width: 100%;
+	height: auto;
+	margin: 15px 0;
+}
+.year li,
+.group li {
+	display: inline-block;
+	margin: 5px 5px;
+	width: 90px;
+	font-weight: bold;
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 20px; 
+}
+.year li:hover,
+.group li:hover,
+.onYear,
+.onGroup {
+	color: #fff;
+	background-color: #5b08c3;
+	transition: all 0.5s;
+}
+.container .form {
+	width: 100%;
+	margin: 20px 0;
+}
+.form li {
+	position: relative;
+	display: inline-block;
+	width: 180px;
+	height: 280px;
+	margin: 20px 20px;
+	border-radius: 15px;
+	background-color: #fafafa;
+	box-shadow: 4px 6px 5px #bbb;
+	overflow: hidden;
+	transition: all 0.5s;
+}
+#add img {
+	position: absolute;
+	top: 90px;
+	left: 40px;
+	display: block;
+	width: 120px;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+#add img:hover{
+	top: 75px;
+	left: 25px;
+	width: 150px;
+}
+.form li .delete {
+	display: block;
+	position: absolute;
+	right: 0;
+	width: 30px;
+	cursor: pointer;
+}
+.form li .photo {
+	display: block;
+	margin: 20px auto;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	background-size: auto 100px;
+	background-position: center;
+}
+.form li .upFile {
+	position: absolute;
+	top: 15px;
+	right: 40px;
+	z-index: 100;
+	display: block;
+	width: 100px;
+	height: 100px;
+	opacity: 0;
+	cursor: pointer;
+}
+.form li input {
+	margin: 5px auto;
+	display: block;
+	height: 30px;
+	width: 140px;
+	outline: none;
+	border: none;
+	background-color: rgba(1, 1, 1, 0.1);
+	text-align: center;
+}
+.form li .click{
+	display: block;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	height: 30px;
+	cursor: pointer;
+}
+.page {
+	margin: 0 auto;
+	height: 25px;
+	text-align: center;
+}
+.page li {
+	/*margin: 0 5px;*/
+	display: inline-block;
+	width: 50px;
+	height: 25px;
+	color: #000;
+	cursor: pointer;
+	text-align: center;
+	line-height: 25px;
+	/*border-bottom: 1px solid #000;*/
+	transition: all 0.3s;
+}
+.page li:hover,
+.page .onPage {
+	color: #fff;
+	background-color: #5b08c3;
+}
+.form li .inputBan {
+	background-color: #fafafa;
+}
