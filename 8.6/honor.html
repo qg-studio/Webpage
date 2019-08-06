@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" type="text/css" href="css/honor.css">
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/xlsx.core.min.js" ></script>
+  <script type="text/javascript" src="js/showExcel.js" ></script>
+  <title>QG官网后台管理系统</title>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="title">
+      <img id="logo" src="image/qglogo.png" alt="qg-logo">
+      <h2>QG官网后台管理系统</h2>
+      <button class="exit" onclick="loginOut()">退出</button>
+    </div>
+    <ul class="nav">
+      <li id="about-qg"><a href="about-qg.html"  target="_self"><img src="image/关于QG.png"><input type="button"  value="关于QG"></a></li>
+      <li id="we"><a href="we.html"  target="_self"><img src="image/我们.png"><input  type="button"  value="我们"></a></li>
+      <li id="member"><a href="member.html"  target="_self"><img src="image/成员.png"><input  type="button"  value="成员"></a></li>
+      <li id="project"><a href="project.html"  target="_self"><img src="image/项目.png"><input  type="button"  value="项目"></a></li>
+      <li id="honor"><a href="honor.html"  target="_self"><img src="image/荣誉.png"><input  type="button"  value="荣誉"></a></li>
+      <li id="column"><a href="column.html"  target="_self"><img src="image/专栏.png"><input  type="button"  value="专栏"></a></li>
+    </ul>
+  </div>
+  <div class="container">
+      <div class="excelContainer">
+          <table id="demo">
+          </table>
+      </div>
+    <h1>荣誉</h1>
+    <div class="award">
+      <span class="subtitle">奖项
+        <button style="right: 5rem">导入</button>
+        <input type="file"  title="导入" style="right: 5rem" onchange="importf(this);awardImport()">
+        <button style="right: 2rem" title="导出" onclick="location.href='http://www.cxkball.club:2333/award/export'">导出</button>
+      </span>
+      <div class="header">
+        <span style="width: 2rem">序号</span>
+        <span style="width: 4rem">项目</span>
+        <span style="width: 4rem">比赛名称</span>
+        <span style="width: 5rem">时间</span>
+        <span style="width: 4rem">比赛等级</span>
+        <span style="width: 4rem">获奖等级</span>
+        <span style="width: 8rem">授奖部门</span>
+        <span style="width: 6rem">获奖学生</span>
+        <span style="width: 4rem">指导老师</span>
+      </div>
+      <div class="award-main">
+      </div>
+      <img class="add" src="image/add.png" onclick="awardAdd()">
+      <ul class="page">
+      </ul>
+    </div>
+    <img class="rule" src="image/分割线.png">
+    <div class="news">
+      <span class="subtitle">新闻链接
+        <button style="right: 5rem">导入</button>
+        <input type="file"  title="导入" style="right: 5rem" onchange="newsImport()">
+        <button style="right: 2rem" title="导出" onclick="location.href='http://www.cxkball.club:2333/news/export'">导出</button>
+      </span>
+      <div class="header">
+        <span style="width: 3rem">序号</span>
+        <span style="width: 20rem">新闻名称</span>
+        <span style="width: 24rem">链接</span>
+      </div>
+      <div class="news-main">
+      </div>
+      <img class="add" src="image/add.png" onclick="newsAdd()">
+      <ul class="page">
+      </ul>
+    </div>
+    <img class="rule" src="image/分割线.png">
+    <div class="patent">
+      <span class="subtitle">专利
+        <button style="right: 5rem">导入</button>
+        <input type="file"  title="导入" style="right: 5rem" onchange="patentImport()">
+        <button style="right: 2rem" title="导出" onclick="location.href='http://www.cxkball.club:2333/patent/export'">导出</button>
+      </span>
+      <div class="header">
+        <span style="width: 3rem">序号</span>
+        <span style="width: 8rem">类型</span>
+        <span style="width: 11rem">名称</span>
+        <span style="width: 10rem">专利号</span>
+        <span style="width: 13rem">发明人</span>
+      </div>
+      <div class="patent-main">
+      </div>
+      <img class="add" src="image/add.png" onclick="patentAdd()">
+      <ul class="page">
+      </ul>    
+    </div>
+    <img class="rule" src="image/分割线.png">
+    <div class="copyright">
+      <span class="subtitle">软件著作权
+        <button style="right: 5rem">导入</button>
+        <input type="file"  title="导入" style="right: 5rem" onchange="copyrightImport()">
+        <button style="right: 2rem" title="导出" onclick="location.href='http://www.cxkball.club:2333/copyright/export'">导出</button>
+      </span>
+      <div class="header">
+        <span style="width: 4rem">序号</span>
+        <span style="width: 16rem">软件名称</span>
+        <span style="width: 10rem">登记号</span>
+        <span style="width: 16rem">发表时间</span>
+      </div>
+      <div class="copyright-main">
+      </div>
+      <img class="add" src="image/add.png" onclick="copyrightAdd()">
+      <ul class="page">
+      </ul>   
+    </div>
+  </div>
+  <script src="js/honor.js"></script>
+</body>
+</html>
+  

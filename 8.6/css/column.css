@@ -1,0 +1,225 @@
+.container {
+    position: relative;
+    top: 0;
+    left: 250px;
+    padding: 2% 3%;
+    margin-bottom: 2%;
+    width: 74%;
+    height: 100%;
+    border-radius: 0 30px 30px 30px;
+    background-color: #fff;
+}
+#column,
+#column input {
+    background-color: #5b08c3;
+}
+.choose {
+    position: relative;
+    top: 2%;
+    left: 250px;
+    padding-top: 2%;
+    width: 74%;
+    font-size: 0;
+}
+.choose li {
+    display: inline-block;
+    padding: 1.3%;
+    width: 140px;
+    height: 30px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    cursor: pointer;
+}
+.choose li span {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.feature {
+    background-color: #fff;
+    color: black;
+}
+.histories {
+    background-color: #f6f6f6;
+    color: #626262;
+}
+
+
+
+.ulAll {
+    position: relative;
+    margin: 2% 0;  
+}
+
+.ulAll ul {
+    position: relative;
+    border-radius: 15px;
+    padding: 2% 3%;
+    margin-bottom: 4%; 
+    width: 94%;
+    font-size: 0;
+    background-color: #fafafa;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.10);
+}
+
+.ulAll ul li {
+    width: 100%;
+    text-align: left;
+}
+
+.ulAll h1 {
+    display: inline;
+}
+
+.headline {
+    display: block;
+    margin-bottom: 4%;
+    font-weight: 800;
+    font-size: 300%;
+    font-family: Georgia;
+    line-height: 150%;
+}
+.content h1 {
+    border-bottom: 2px solid #323232;
+}
+
+.container input {
+    border: 1px solid transparent;
+    background: none;
+}
+.number {
+    margin-right: 4%;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    outline: none;
+}
+.text-title {
+    width: 300px;
+    height: 35px;
+    font-size: 1.7rem;
+    outline: none;
+}
+.text-word {
+    border: 1px solid transparent;
+    width: 800px;
+    height: 45px;
+    padding: 0.8%;
+    margin-bottom: 1.5%;
+    outline: none;
+    line-height: 125%;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background: none;
+}
+.picDiv {
+    display: inline-block;
+}
+.pic {
+    position: relative;
+    display: inline-block;
+    border: 1px solid black;
+    margin: 15px 0;
+    margin-right: 15px;
+    width: 133px;
+    height: 100px;
+    background-color: white;
+}
+.pic input {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 133px;
+    height: 90px;
+    z-index: 10;
+    cursor: pointer;
+}
+.image-small {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 133px;
+    height: 100px;
+}
+.picInput {
+    display: block;
+    padding: 2% 0;
+    width: 133px;
+    outline: none;
+}
+.addpic {
+    margin-bottom: 33px;
+    width: 100px;
+    cursor: pointer;
+}
+.text {
+    position: relative;
+    padding: 20px 0 0 0;
+}
+
+.edit {
+    position: absolute;
+    top: 40px; 
+    right: 60px;   
+    width: 42px;
+    cursor: pointer;
+}
+.sure {
+    display: none;
+    position: absolute;
+    top: 40px; 
+    right: 60px;   
+    width: 42px;
+    cursor: pointer;
+}
+.border {
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 0;
+    z-index: 1;
+}
+.borderTwo {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    border: 1px solid #dfdede;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 0;
+    z-index: 1;
+}
+.revise {
+    width: 50%;
+    cursor: pointer;
+}
+/**/
+.pic-sure {
+    display: none;
+    width: 50%;
+    cursor: pointer;
+}
+.delete {
+    width: 50%;
+    cursor: pointer;
+}
+.deleteBig {
+    width: 100%;
+    cursor: pointer;
+}
+.upLoad {
+    opacity: 0;
+}
+.addUl {
+    margin: 0 auto;
+    padding: 1%;
+}
+.increase {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    cursor: pointer;
+}

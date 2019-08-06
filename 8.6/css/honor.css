@@ -1,0 +1,197 @@
+#honor,
+#honor input {
+	background-color: #5b08c3;
+}
+/*表格显示*/
+.excelContainer {
+	display: none;
+    position: absolute;
+	background-color: white;
+    z-index: 10;
+}
+.excelContainer table{
+	margin: 0 auto;
+	width: 80%;
+	border-collapse: collapse;
+	border: black 1px solid;
+}
+.excelContainer th{
+text-align: center;
+padding: 20px 0;
+}
+.excelContainer td{
+padding: 5px 10px;
+border: black 1px solid;
+}
+.excelContainer input{
+border: none;
+    /* 浏览器自带的 input 标签样式并不好看 将 input 标签的边框去掉 */
+}
+
+
+
+h1 {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+h1:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+
+    position: absolute;
+    background: black;
+    transition: width .3s ease 0s;
+    width: 0
+}
+h1:hover:after {
+    width: 97%;
+}
+.container {
+	position: relative;
+	min-width: 58rem;
+}
+.container .honorTitle {
+	margin: 40px 0;
+	width: 100%;
+	height: 40px;
+	font-size: 32px;
+}
+.award, 
+.news, 
+.patent, 
+.copyright {
+	width: 58rem;
+	margin: 10px auto;
+}
+.rule {
+	display: block;
+	margin: 0 auto;
+	width: 400px;
+}
+.subtitle {
+	position: relative;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	font-size: 1.6rem;
+}
+.subtitle button{
+	display: block;
+	position: absolute;
+	height: 2rem;
+	width: 3rem;
+	top: 0.2rem;
+	color: #5b08c3;
+	font-weight: bold;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid #5b08c3;
+	background-color: #fff;
+} 
+.subtitle input{
+	display: block;
+	padding: 1rem 1.5rem;
+	position: absolute;
+	top: 0.2rem;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+.header {
+	margin: 1rem 0;
+}
+.header span {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	color: #7d7d7d;
+	font-size: 0.8rem;
+	font-weight: bold;
+	text-align: center;
+}
+.list {
+	position: relative;
+	margin: 0.6rem auto;
+	box-shadow: 0 0px 5px #d0d0d0;
+	border-radius: 5px;
+	background-color: #fff;
+}
+.award-list {
+	height: 6rem;
+}
+.news-list {
+	height: 4rem;
+}
+.patent-list {
+	height: 6rem;
+}
+.copyright-list {
+	height: 3rem;
+}
+.list textarea {
+	display: inline-block;
+	padding: 0.5rem;
+	text-align: center;
+	outline: none;
+	border: none;
+	resize: none;
+	border-radius: 5px;
+	background-color: #fff;
+}
+.award-list textarea {
+	height: 5rem;
+}
+.news-list textarea {
+	height: 3rem;
+}
+.patent-list textarea {
+	height: 5rem;
+}
+.copyright-list textarea {
+	height: 2rem;
+}
+.list textarea:focus {
+	background-color: rgba(1, 1, 1, 0.1);
+}
+.list img {
+	display: block;
+	margin-top: -0.6rem;
+	position: absolute;
+	top: 50%;
+	height: 1.2rem;
+	cursor: pointer;
+}
+.add {
+	display: block;
+	margin: 1rem auto;
+	height: 3rem;
+	cursor: pointer;
+}
+.page {
+	margin: 0 auto;
+	height: 2rem;
+	text-align: center;
+}
+.page li {
+	display: inline-block;
+	width: 4rem;
+	height: 2rem;
+	color: #000;
+	cursor: pointer;
+	text-align: center;
+	line-height: 2rem;
+	transition: all 0.3s;
+}
+.page li:hover,
+.page .onPage {
+	color: #fff;
+	background-color: #5b08c3;
+}
